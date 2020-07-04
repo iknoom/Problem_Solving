@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Problem_Solving" targetName="abc170_E" />
+      <config projectName="Problem_Solving" targetName="abc157_E" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b4d462c2-1d16-4e38-b901-5dec493c89fe" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ProjectId" id="1eDKEHl610YCGxnydJ2NlikyX6i" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/BOJ" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Problem_Solving\Algorithms_python" />
+      <recent name="C:\Problem_Solving\Algorithms" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Problem_Solving\Algorithms_python" />
+      <recent name="C:\Problem_Solving\Algorithms" />
+      <recent name="C:\Problem_Solving\BOJ" />
+      <recent name="C:\Problem_Solving" />
+      <recent name="C:\Problem_Solving\BOJ\ICPC\2016 Daejeon Regional" />
+    </key>
+  </component>
+  <component name="RunManager" selected="CMake Application.abc157_E">
+    <configuration name="abc157_E" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Problem_Solving" TARGET_NAME="abc157_E" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Problem_Solving" RUN_TARGET_NAME="abc157_E">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="abc170_E" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Problem_Solving" TARGET_NAME="abc170_E" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Problem_Solving" RUN_TARGET_NAME="abc170_E">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.abc157_E" />
+      <item itemvalue="CMake Application.abc170_E" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b4d462c2-1d16-4e38-b901-5dec493c89fe" name="Default Changelist" comment="" />
+      <created>1593850609270</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593850609270</updated>
+      <workItem from="1593850610525" duration="483000" />
+      <workItem from="1593851103135" duration="26404000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="101" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593851092305">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="101" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1593851092305" />
+    <state width="1234" height="400" key="GridCell.Tab.0.bottom" timestamp="1593870846201">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1593870846201" />
+    <state width="1234" height="400" key="GridCell.Tab.0.center" timestamp="1593870846201">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="400" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1593870846201" />
+    <state width="1234" height="400" key="GridCell.Tab.0.left" timestamp="1593870846201">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="400" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1593870846201" />
+    <state width="1234" height="400" key="GridCell.Tab.0.right" timestamp="1593870846201">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="400" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1593870846201" />
+  </component>
+</project>

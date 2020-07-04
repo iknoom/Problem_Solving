@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\Problem_Solving.dir/objects.a
-C:\PROGRA~2\MINGW-~1.0\bin\ar.exe cr CMakeFiles\Problem_Solving.dir/objects.a @CMakeFiles\Problem_Solving.dir\objects1.rsp
-C:\PROGRA~2\MINGW-~1.0\bin\G__~1.EXE -g   -Wl,--whole-archive CMakeFiles\Problem_Solving.dir/objects.a -Wl,--no-whole-archive  -o Problem_Solving.exe -Wl,--out-implib,libProblem_Solving.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Problem_Solving.dir\linklibs.rsp

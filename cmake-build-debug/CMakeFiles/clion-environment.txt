@@ -1,4 +1,0 @@
-ToolSet: w64 6.0 (local)@C:\Program Files (x86)\MinGW-W64 GCC-8.1.0
-Options: 
-
-Options:
