@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\abc157_E.dir/objects.a
+C:\PROGRA~2\MINGW-~1.0\bin\ar.exe cr CMakeFiles\abc157_E.dir/objects.a @CMakeFiles\abc157_E.dir\objects1.rsp
+C:\PROGRA~2\MINGW-~1.0\bin\G__~1.EXE -g  -Wl,--stack,1073741824 -Wl,--whole-archive CMakeFiles\abc157_E.dir/objects.a -Wl,--no-whole-archive  -o abc157_E.exe -Wl,--out-implib,libabc157_E.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\abc157_E.dir\linklibs.rsp
