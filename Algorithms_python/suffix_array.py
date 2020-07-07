@@ -16,26 +16,20 @@ class SA_constructor:
         if self.pos[i] != self.pos[j]:
             if self.pos[i] < self.pos[j]:
                 return -1
-            elif self.pos[i] > self.pos[j]:
-                return 1
             else:
-                return 0
+                return 1
         i += self.d
         j += self.d
         if i < self.N and j < self.N:
             if self.pos[i] < self.pos[j]:
                 return -1
-            elif self.pos[i] > self.pos[j]:
-                return 1
             else:
-                return 0
+                return 1
         else:
             if i > j:
                 return -1
-            elif i < j:
-                return 1
             else:
-                return 0
+                return 1
 
     def construct_SA(self):
         while True:
