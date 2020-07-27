@@ -1,0 +1,6 @@
+N = int(input())
+H = list(map(int, input().split()))
+a = sum(H[i] % 2 for i in range(N))
+b = sum(H[i] // 2 for i in range(N))
+c = sum(H)
+print("YES" if c % 3 == 0 and a <= b else "NO")
