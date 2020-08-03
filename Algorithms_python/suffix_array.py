@@ -6,7 +6,7 @@ class SA_constructor:
         self.d = 1
         self.N = len(self.S)
         self.sa = [i for i in range(self.N)]
-        self.pos = [self.S[i] for i in range(self.N)]
+        self.pos = [ord(self.S[i]) for i in range(self.N)]
         self.lcp = [0] * self.N
 
     def _expon(self):
@@ -14,32 +14,20 @@ class SA_constructor:
 
     def _func(self, i, j):
         if self.pos[i] != self.pos[j]:
-            if self.pos[i] < self.pos[j]:
-                return -1
-            else:
-                return 1
+            return self.pos[i] - self.pos[j]
         i += self.d
         j += self.d
         if i < self.N and j < self.N:
-            if self.pos[i] < self.pos[j]:
-                return -1
-            else:
-                return 1
+            return self.pos[i] - self.pos[j]
         else:
-            if i > j:
-                return -1
-            else:
-                return 1
+            return j - i
 
     def construct_SA(self):
         while True:
             self.sa.sort(key=cmp_to_key(self._func))
             temp = [0] * self.N
             for i in range(self.N - 1):
-                if self._func(self.sa[i], self.sa[i + 1]) == -1:
-                    temp[i + 1] = temp[i] + 1
-                else:
-                    temp[i + 1] = temp[i]
+                temp[i + 1] = temp[i] + int(self._func(self.sa[i], self.sa[i + 1]) < 0)
             for i in range(self.N):
                 self.pos[self.sa[i]] = temp[i]
             if temp[-1] == self.N - 1:
