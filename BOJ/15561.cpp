@@ -74,21 +74,24 @@ int main() {
     cin.tie(nullptr);
     cout.tie(nullptr);
     ios::sync_with_stdio(false);
-    int N;
-    cin >> N;
+    int N, Q, U, V;
+    cin >> N >> Q >> U >> V;
     SegmentTree Seg = SegmentTree(N);
     for (int i = 0; i < N; i++) {
         int v;
         cin >> v;
-        Seg.set(i, v);
+        Seg.set(i, U * v + V);
     }
     Seg.build();
 
-    int Q;
-    cin >> Q;
     while (Q--) {
-        int l, r;
-        cin >> l >> r;
-        cout << Seg.query(l - 1, r - 1) << '\n';
+        int a, b, c;
+        cin >> a >> b >> c;
+        if (a == 0) {
+            cout << Seg.query(b - 1, c - 1) - V << '\n';
+        }
+        else {
+            Seg.update(b - 1, U * c + V);
+        }
     }
 }
