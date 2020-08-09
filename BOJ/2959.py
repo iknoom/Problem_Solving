@@ -1,0 +1,5 @@
+A, B, C, D = map(int, input().split())
+p = min(A, B) * min(C, D)
+q = min(A, C) * min(B, D)
+r = min(A, D) * min(B, C)
+print(max([p, q, r]))
