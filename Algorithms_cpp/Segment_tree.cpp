@@ -14,7 +14,7 @@ struct SegTree{
     }
 
     void prepare(){
-        for(int i = start - 1; i; i--) arr[i] = arr[i * 2] + arr[i * 2 + 1]; // val
+        for(int i = start - 1; i; i--) arr[i] = arr[i * 2] + arr[i * 2 + 1];
     }
 
     void update(int here, long long val){
@@ -22,7 +22,7 @@ struct SegTree{
         arr[here] = val;
         while (here){
             here /= 2;
-            arr[here] = arr[here * 2] + arr[here * 2 + 1];             // val
+            arr[here] = arr[here * 2] + arr[here * 2 + 1];
         }
     }
 
@@ -31,11 +31,20 @@ struct SegTree{
         r += start;
         long long ret = 0;
         while (l <= r){
-            if (l % 2 == 1) ret += arr[l++];                            // val
-            if (r % 2 == 0) ret += arr[r--];                            // val
+            if (l % 2 == 1) ret += arr[l++];
+            if (r % 2 == 0) ret += arr[r--];
             l /= 2; r /= 2;
         }
         return ret;
+    }
+
+    int search(int k) {
+        int pos = 1;
+        while(pos < start){
+            if(k <= arr[pos << 1]) pos <<= 1;
+            else k-=arr[pos << 1], pos = pos << 1 | 1;
+        }
+        return pos-start;
     }
 };
 
