@@ -1,85 +1,64 @@
-﻿#include <iostream>
-#include <algorithm>
-#include <vector>
-#include <tuple>
-#include <utility>
-#include <queue>
-#include <cstring>
+﻿#include <bits/stdc++.h>
 
 using namespace std;
-using pi = pair<int, int>;
 const int MAX_D = 17;
-int N, Q;
-int depth[100001];
-vector<int> adj[100001];
-int p[100001][MAX_D];
+const int MAXN = 100000;
 
+int N, Q, p[MAXN][MAX_D], depth[MAXN];
+vector<int> adj[MAXN];
+bool vst[MAXN];
 
-void get_depth() {
-	queue<pi> q;
-	vector<bool> vst(N, false);
-	q.push({ 0, 0 });
-	vst[0] = true;
-	while (!q.empty()) {
-		int u, cnt;
-		tie(u, cnt) = q.front();
-		q.pop();
-		depth[u] = cnt;
-		for (auto v : adj[u]) {
-			if (!vst[v]) {
-				vst[v] = true;
-				p[v][0] = u;
-				q.push({ v, cnt + 1 });
-			}
-		}
-	}
+void dfs(int i, int d) {
+    vst[i] = true, depth[i] = d;
+    for (int j : adj[i])
+        if (!vst[j]) {
+            p[j][0] = i;
+            dfs(j, d + 1);
+        }
 }
 
-int LCA(int u, int v) {
-	if (depth[u] < depth[v]) swap(u, v);
-	int diff = depth[u] - depth[v];
-	for (int j = MAX_D - 1; j >= 0; j--) {
-		if (diff >= (1 << j)) {
-			u = p[u][j];
-			diff -= (1 << j);
-		}
-	}
-	
-	if (u == v) return u;
-
-	for (int j = MAX_D - 1; j >= 0; j--) {
-		if (p[u][j] != p[v][j]) {
-			u = p[u][j];
-			v = p[v][j];
-		}
-	}
-	return p[u][0];
+void construct_lca() {
+    dfs(0, 0);
+    for (int j = 1; j < MAX_D; j++)
+        for (int i = 1; i < N; i++)
+            p[i][j] = p[p[i][j - 1]][j - 1];
 }
 
-int main()
-{
-	cin.tie(NULL); cout.tie(NULL); ios::sync_with_stdio(false);
-	cin >> N;
-	for (int i = 0; i < N - 1; i++) {
-		int u, v;
-		cin >> u >> v;
-		adj[u - 1].push_back(v - 1);
-		adj[v - 1].push_back(u - 1);
-	}
-	memset(p, -1, sizeof(p));
-	get_depth();
-	
-	for (int j = 1; j < MAX_D; j++) {
-		for (int i = 0; i < N; i++) {
-			if (p[i][j - 1] != -1)
-				p[i][j] = p[ p[i][j - 1] ][j - 1];
-		}
-	}
+int find_lca(int a, int b) {
+    // Make a have a higher depth
+    if (depth[a] < depth[b]) swap(a, b);
 
-	cin >> Q;
-	while (Q--) {
-		int a, b;
-		cin >> a >> b;
-		cout << LCA(a - 1, b - 1) + 1 << '\n';
-	}
+    // Elevate a to the depth of b
+    int depth_diff = depth[a] - depth[b];
+    for (int j = MAX_D - 1; j >= 0; j--)
+        if (depth_diff & (1 << j))
+            a = p[a][j];
+
+    if (a == b) return a;
+
+    for (int j = MAX_D - 1; j >= 0; j--)
+        if (p[a][j] != p[b][j])
+            a = p[a][j], b = p[b][j];
+
+    return p[a][0];
+}
+
+int main() {
+    cin.tie(NULL); cout.tie(NULL); ios::sync_with_stdio(false);
+    cin >> N;
+    for (int i = 0; i < N - 1; i++) {
+        int x, y;
+        cin >> x >> y;
+        x--; y--;
+        adj[x].push_back(y), adj[y].push_back(x);
+    }
+    construct_lca();
+
+    cin >> Q;
+    while (Q--) {
+        int u, v;
+        cin >> u >> v;
+        u--; v--;
+        cout << find_lca(u, v) + 1 << '\n';
+    }
 }
