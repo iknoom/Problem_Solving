@@ -1,9 +1,5 @@
 h = lambda x: ord(x) - ord('A') if x <= 'Z' else ord(x) - ord('a') + 26
-flow = [[0] * 52 for _ in range(52)]
-cap = [[0] * 52 for _ in range(52)]
-adj = [set() for _ in range(52)]
-S = h('A')
-T = h('Z')
+
 
 def make_flow(prv):
     global S, T
@@ -33,6 +29,12 @@ def bfs():
     return -1
 
 if __name__ == '__main__':
+    flow = [[0] * 52 for _ in range(52)]
+    cap = [[0] * 52 for _ in range(52)]
+    adj = [set() for _ in range(52)]
+    S = h('A')
+    T = h('Z')
+
     N = int(input())
     for _ in range(N):
         u, v, c = input().split()

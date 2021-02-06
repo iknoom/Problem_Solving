@@ -1,9 +1,4 @@
 INF = 10**9
-N = 0
-capacity = list()
-flow = list()
-level = list()
-work = list()
 
 def bfs():
     global N, capacity, flow, level

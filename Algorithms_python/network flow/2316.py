@@ -1,17 +1,6 @@
 import sys
 input = sys.stdin.readline
 
-N, P = map(int, input().split())
-f = [[[0] * N for _ in range(N)] for _ in range(2)]
-c = [[[0] * N for _ in range(N)] for _ in range(2)]
-adj = [[] for _ in range(N)]
-for _ in range(P):
-    u, v = map(int, input().split())
-    u -= 1; v -= 1
-    adj[u].append(v)
-    adj[v].append(u)
-    c[u][v] += 1
-
 def make_flow(prv):
     ret = 10**9
     cur = 1
@@ -37,10 +26,22 @@ def bfs():
                 if v == 1: return make_flow(prv)
     return -1
 
-ans = 0
+if __name__ == "__main__":
+    N, P = map(int, input().split())
+    f = [[[0] * N for _ in range(N)] for _ in range(2)]
+    c = [[[0] * N for _ in range(N)] for _ in range(2)]
+    adj = [[] for _ in range(N)]
 
-while True:
-    ret = bfs()
-    if ret < 0: break
-    ans += ret
-print(ans)
+    for _ in range(P):
+        u, v = map(int, input().split())
+        u -= 1; v -= 1
+        adj[u].append(v)
+        adj[v].append(u)
+        c[u][v] += 1
+
+    ans = 0
+    while True:
+        ret = bfs()
+        if ret < 0: break
+        ans += ret
+    print(ans)
