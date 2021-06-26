@@ -1,32 +1,37 @@
 import sys
-sys.setrecursionlimit(10**6)
+sys.setrecursionlimit(10**5 + 5)
 input = sys.stdin.readline
 
-def dfs(u, root):
-    global ans
-    v = adj[u] - 1
-    ret = -1
-    if visited[v] < 0:
-        visited[v] = root
-        ret = dfs(v, root)
-    elif visited[v] == root:
-        ret = v
-    if ret >= 0:
-        ans += 1
-    if ret == u:
-        ret = -1
-    return ret
+def dfs(u, adj, visited):
+    v = adj[u]
+    if not visited[v]:
+        visited[v] = True
+        return dfs(v, adj, visited)
+    else:
+        return v
 
 
-T = int(input())
-
-for _ in range(T):
+def solution():
     N = int(input())
     adj = list(map(int, input().split()))
-    visited = [-1] * N
-    ans = 0
+    for i in range(N):
+        adj[i] -= 1
+
+    # solution
+    visited = [False] * N
+    count = 0
     for u in range(N):
-        if visited[u] < 0:
-            visited[u] = u
-            dfs(u, u)
-    print(N - ans)
+        if not visited[u]:
+            visited[u] = True
+            end = dfs(u, adj, visited)
+            while u != end:
+                count += 1
+                u = adj[u]
+    return count
+
+
+if __name__ == '__main__':
+    T = int(input())
+    for _ in range(T):
+        answer = solution()
+        print(answer)
